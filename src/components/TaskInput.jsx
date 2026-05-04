@@ -1,22 +1,25 @@
 import { useState } from 'react';
+
 const TaskInput = ({ onAddTask }) => {
-    const [inputValue, setInputValue] = useState ("");
+    const [inputValue, setInputValue] = useState("");
 
     const handleSubmit = (e) => {
-        e.preventDefault ();
+        e.preventDefault();
         if (inputValue.trim()) {
-            onAddTask (inputValue); // On fait remonter l'info setInputValue (""); // On vide le champ
+            onAddTask(inputValue);
+            setInputValue("");
         }
     };
+
     return (
-        <form onSubmit ={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <input
                 type="text"
-                value = {inputValue}
-                onChange= {(e) => setInputValue(e.target.value)}
-                placeholder="Ajouteruuneutache..."
-                />
-            <button type="submit">Ajouter </button>
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                placeholder="Ajouter une tache..."
+            />
+            <button type="submit">Ajouter</button>
         </form>
     );
 };
