@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+. container { max-width: 400px; margin: 2rem auto; font-family: sans-serif; }
+. task-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+. delete -btn { color: red; cursor: pointer; border: none; background: none; }
